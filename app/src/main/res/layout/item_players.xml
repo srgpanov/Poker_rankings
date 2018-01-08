@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="@dimen/spacing_normal_16"
+    android:layout_marginRight="@dimen/spacing_normal_16"
+    app:cardCornerRadius="2dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/spacing_normal_16"
+        android:paddingRight="@dimen/spacing_normal_16"
+        android:paddingTop="8dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="@dimen/avatar_48dp"
+            android:layout_height="@dimen/avatar_48dp"
+            android:src="@drawable/ic_camera"
+            android:layout_marginStart="0dp"
+            app:layout_constraintTop_toTopOf="@+id/tv_nickname"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="srgpanov"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/img_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+
+        <TextView
+            android:id="@+id/tv_itm_percent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:layout_width="0dp"
+            android:layout_below="@id/img_avatar"
+            android:layout_marginTop="16dp"
+            android:text="@string/itm_percent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_rebuy"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"
+            />
+
+        <TextView
+            android:id="@+id/tv_avg_buy_in"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/avg_buy_in"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_field_size"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"/>
+
+        <TextView
+            android:id="@+id/tv_field_size"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/avg_fs"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/tv_avg_buy_in"
+            app:layout_constraintRight_toLeftOf="@+id/edit_text_rebuy"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"
+            />
+
+        <TextView
+            android:id="@+id/edit_text_rebuy"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rebuy_addon"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/tv_field_size"
+            app:layout_constraintRight_toLeftOf="@+id/tv_itm_percent"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"
+            />
+
+        <TextView
+            android:id="@+id/tv_avg_buy_in_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$3.87"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_avg_buy_in"
+            app:layout_constraintRight_toLeftOf="@+id/tv_field_size"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            app:layout_constraintTop_toBottomOf="@+id/tv_avg_buy_in"
+            app:layout_constraintHorizontal_bias="0.523"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_avg_fs_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            android:text="500"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_field_size"
+            app:layout_constraintRight_toLeftOf="@+id/edit_text_rebuy"
+            app:layout_constraintTop_toBottomOf="@+id/tv_field_size"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_rebuy_addon_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            android:text="2%"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_text_rebuy"
+            app:layout_constraintRight_toRightOf="@+id/edit_text_rebuy"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_rebuy"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_itm_percent_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            android:text="20%"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_rebuy"
+            app:layout_constraintRight_toRightOf="@+id/tv_itm_percent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itm_percent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <View
+            android:id="@+id/separator_view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_prizes_value"/>
+
+        <TextView
+            android:id="@+id/tv_prizes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:text="Prizes"
+            app:layout_constraintLeft_toRightOf="@+id/img_avatar"
+            app:layout_constraintRight_toLeftOf="@+id/tv_profit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nickname"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:text="Profit"
+            app:layout_constraintLeft_toRightOf="@+id/tv_prizes"
+            app:layout_constraintRight_toLeftOf="@+id/tv_roi"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nickname"/>
+
+        <TextView
+            android:id="@+id/tv_roi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/secondary_text"
+            android:text="ROI"
+            app:layout_constraintLeft_toRightOf="@+id/tv_profit"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nickname"
+            android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_prizes_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/primary_text"
+            android:text="$1000"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_prizes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_prizes"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toLeftOf="@+id/tv_profit"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_profit_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            android:text="$500"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_profit"
+            app:layout_constraintRight_toRightOf="@+id/tv_profit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profit"/>
+
+        <TextView
+            android:id="@+id/tv_roi_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/primary_text"
+            android:text="10%"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_roi"
+            app:layout_constraintRight_toRightOf="@+id/tv_roi"
+            app:layout_constraintTop_toBottomOf="@+id/tv_roi"/>
+
+        <!--<TextView-->
+            <!--android:id=""-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/edit_text_nickname"-->
+            <!--android:layout_toEndOf="@id/edit_text_buy_in"-->
+            <!--android:layout_toRightOf="@id/edit_text_buy_in"-->
+            <!--android:textSize="16sp"/>-->
+
+        <!--<TextView-->
+            <!--android:id=""-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/edit_text_nickname"-->
+            <!--android:layout_toEndOf="@id/edit_text_field_size"-->
+            <!--android:layout_toRightOf="@id/edit_text_field_size"-->
+            <!--android:textSize="16sp"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/edit_text_itm_played"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/edit_text_nickname"-->
+            <!--android:layout_toEndOf="@id/edit_text_rebuy"-->
+            <!--android:layout_toRightOf="@id/edit_text_rebuy"-->
+            <!--android:textSize="16sp"/>-->
+
+        <!--<TextView-->
+            <!--android:id=""-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/edit_text_nickname"-->
+            <!--android:layout_toEndOf="@id/edit_text_itm_played"-->
+            <!--android:layout_toRightOf="@id/edit_text_itm_played"-->
+            <!--android:textSize="16sp"/>-->
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v7.widget.CardView>
