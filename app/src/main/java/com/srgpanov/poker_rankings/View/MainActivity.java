@@ -15,6 +15,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity<MainActivityPresenter,MainActivit
         setSupportActionBar(toolbar);
         mFloatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setVisibility(View.INVISIBLE);
         Log.d("scrnPath","create");
@@ -75,6 +77,7 @@ public class MainActivity extends BaseActivity<MainActivityPresenter,MainActivit
         super.onStart();
         Log.d("scrnPath","start");
         mRecyclerView.setVisibility(View.VISIBLE);
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mFloatingActionButton.setOnClickListener(view -> presenter.searchPlayers());
     }
 
@@ -134,7 +137,6 @@ public class MainActivity extends BaseActivity<MainActivityPresenter,MainActivit
 
             }
         });
-        mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mRecyclerView.setAdapter(playersAdapter);
     }
 
@@ -149,12 +151,13 @@ public class MainActivity extends BaseActivity<MainActivityPresenter,MainActivit
 
                 }
             });
-            mRecyclerView.setLayoutManager(mLinearLayoutManager);
             mRecyclerView.setAdapter(playersAdapter);
 
         }
+        playersAdapter.notifyItemInserted(0);
+        mRecyclerView.scrollToPosition(0);
 
-        playersAdapter.addItem(profile);
+
     }
 
     @Override

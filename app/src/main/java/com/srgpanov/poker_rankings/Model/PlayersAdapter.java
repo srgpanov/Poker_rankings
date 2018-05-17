@@ -115,11 +115,8 @@ public class PlayersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
 
     public void addItem(PlayerProfile profile) {
-        List<PlayerProfile> list = new ArrayList<>();
-        list.add(profile);
-        list.addAll(mPlayerProfiles);
-        mPlayerProfiles = list;
-        notifyDataSetChanged();
+        mPlayerProfiles.add(0,profile);
+        notifyItemInserted(mPlayerProfiles.size());
 
     }
 

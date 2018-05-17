@@ -187,7 +187,7 @@ public class MainActivityPresenter implements MainActivityPresenterInterface {
         @Override
         public void onLoadFinished(Loader<PlayerProfile> loader, PlayerProfile profile) {
             Log.d("data", profile.toString());
-            mProfileList.add(profile);
+            mProfileList.add(0,profile);
             mActivity.showPlayers(profile);
         }
 
